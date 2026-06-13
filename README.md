@@ -1,6 +1,6 @@
 # 4DGS-Enhancement: Multi-modal Prior Guided 4D Gaussian Splatting
 
-This repository contains the partial implementation of the research on **Multi-modal Prior Guided Sparse-view 4D Gaussian Splatting**.
+This repository contains the partial implementation of the research on **Multi-modal Prior Guided Sparse-view 4D Gaussian Splatting**, which is an independent work not affiliated with the original "4D Gaussian Splatting for Real-Time Dynamic Scene Rendering" project team.
 
 By introducing explicit multi-modal priors (Semantic Masks and Monocular Depth), this framework significantly enhances the robustness, geometry consistency, and rendering quality of 4D Gaussian Splatting, especially under highly ill-posed conditions like monocular or sparse-view dynamic videos.
 
@@ -11,7 +11,7 @@ By introducing explicit multi-modal priors (Semantic Masks and Monocular Depth),
 Compared to baseline 3D/4D Gaussian Splatting, this repository introduces the following core capabilities:
 
 - **Robust Sparse-View Geometry (Scale-invariant Log-Pearson Depth Loss)**  
-  Instead of relying solely on photometric loss, we integrate depth priors (e.g., from Depth Anything V2) using a novel Log-Pearson correlation loss. This resolves the scale-ambiguity issue in monocular depth estimation and builds a strict, accurate 3D geometry skeleton, eliminating severe "floater" artifacts.
+  Instead of relying solely on photometric loss, depth priors (e.g., from Depth Anything V2) are integrated using a novel Log-Pearson correlation loss. This resolves the scale-ambiguity issue in monocular depth estimation and builds a strict, accurate 3D geometry skeleton, eliminating severe "floater" artifacts.
 
 - **Mask-Gated Density Control**  
   A highly targeted densification mechanism. It utilizes semantic masks (e.g., from SAM 2) combined with local depth errors to explicitly guide the cloning and splitting of Gaussians. Optimization resources are forced to focus on dynamic foreground objects, radically suppressing the infinite growth of noisy floaters in the background.
